@@ -24,14 +24,6 @@ Responsive Design: Built with viewport units (vw, vh) to ensure the creative sca
 
 Optimized Assets: Utilizes SVG for iconography (crisp scaling, low file size) and WebP for image assets to maintain a lightweight footprint.
 
-📂 Project Structure
-Plaintext
-
-/
-├── index.html       # Main structure and layer definitions
-├── style.css        # Animation keyframes and styling
-├── script.js        # Logic for state transitions and audio
-└── assets/          # Media files (WebP, MP4, MP3)
 🚀 How to Run
 Clone the repository or download the source files.
 
