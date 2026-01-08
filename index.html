@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AA - Final Pitch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="sfx-alert" src="alert.mp3" loop></audio>
+    <audio id="sfx-start" src="start.mp3"></audio>
+    <audio id="sfx-brakes" src="brakes.mp3"></audio>
+
+    <div id="sound-toggle" onclick="toggleSound()">
+        <svg class="icon-svg" viewBox="0 0 24 24">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+        </svg>
+    </div>
+
+    <div id="boot-screen" onclick="bootSystem()">
+        <div class="boot-text">CLICK TO INITIALIZE</div>
+        <div class="boot-sub">SYSTEM STANDBY</div>
+    </div>
+
+    <main id="stage">
+
+        <section id="layer-1" class="layer active">
+            <div class="scanline"></div>
+            <div class="alert-icon">⚠</div>
+            <h1 class="l1-headline">Project Stalled?</h1>
+            <p class="l1-subhead">SITUATION CRITICAL</p>
+            <button class="forward-btn" 
+                    onmouseenter="playHoverSound()" 
+                    onmouseleave="stopHoverSound()" 
+                    onclick="goLayer2()">
+                <span>DISPATCH RESCUE UNIT &gt;&gt;</span>
+            </button>
+        </section>
+
+        <section id="layer-2" class="layer waiting-down">
+            <div class="yellow-floor" id="floor"></div>
+            <div class="text-stage">
+                <h1 class="big-text text-white" id="txt1">ALWAYS</h1>
+                <h1 class="big-text text-yellow" id="txt2">AHEAD.</h1>
+                <div class="role-tag" id="roleTag">HTML5 WEB BANNER SPECIALIST</div>
+            </div>
+            <div class="van-rig" id="van">
+                <img src="aa_van.webp" class="van-img" alt="AA Van">
+            </div>
+            <div class="cta-wrapper">
+                <button class="kinetic-btn" id="cta2" onclick="goLayer3()">VIEW PORTFOLIO</button>
+            </div>
+        </section>
+
+        <article id="layer-3" class="layer waiting-down">
+            <div class="cinema-container">
+                <div class="cinema-header">
+                    <h2 class="cinema-title">Now Showing</h2>
+                    <h1 class="cinema-headline">Youssef Chbani: The Portfolio</h1>
+                </div>
+                
+                <div class="video-frame">
+                    <video controls controlsList="nodownload">
+                        <source src="showreel.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+
+                <div class="cinema-controls">
+                    <button class="btn-stream-primary" onclick="window.open('https://github.com/YoussefChbani/AA-Showreel.git', '_blank')">
+                        <span>&lt;/&gt;</span> VIEW CODE
+                    </button>
+                    
+                    <button class="btn-stream-secondary" onclick="resetPage()">
+                        &#8634; RESTART
+                    </button>
+                </div>
+            </div>
+
+            <a href="https://youssefchbani.github.io/Cention-banner/" class="more-indicator" target="_blank">
+                <span class="more-text">MORE</span>
+                <div class="arrow-stack">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+            </a>
+        </article>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
